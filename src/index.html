@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nathalie Chamard Opticiens by  rouhmin</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#f5f0e8',
+          chamard: '#b03030',
+          orange: '#e07830',
+          navy: '#1a2332',
+          darkbrown: '#3d3835',
+        },
+        fontFamily: {
+          serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+          sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  .arch-top { border-radius: 50% 50% 0 0 / 30% 30% 0 0; }
+  .logo-circle {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    border: 3px solid #b03030;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8px;
+    position: relative;
+    background: white;
+  }
+  .logo-circle::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    border: 1px solid #b0303040;
+  }
+  .floral-deco {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+  }
+  /* Floral SVG decorations */
+  .flower-red { color: #c0392b; }
+  .flower-yellow { color: #f1c40f; }
+  .flower-orange { color: #e07830; }
+  .floating-rdv {
+    position: fixed;
+    right: 0;
+    top: 35%;
+    z-index: 50;
+    background: #b03030;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 20px 7px;
+    border-radius: 6px 0 0 6px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-decoration: none;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  }
+  .brand-strip span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+  }
+</style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
+
+<!-- Barre supérieure -->
+<div class="bg-navy text-white text-xs py-2">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+    <div>
+      <span class="mr-4">Chamard Optique — Opticien à L'Arbresle(69) depuis 1950 /Lunettes et Lentilles</span>
+    </div>
+    <div class="flex gap-3">
+      <a href="#" class="w-4 h-4 rounded-sm items-center text-center justify-center bg-blue-600 text-white font-bold text-lg hover:bg-blue-500 hover:scale-110 hover shadow-lg hover:shadow-blue-500/50 transition duration-300">f</a>
+      <a href="#" class="hover:opacity-80 text-xs" aria-label="Instagram">
+        <img src="../photo_site/instagram.png" alt="Instagram" class="w-4 h-4 rounded-sm" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header class="bg-white sticky top-0 z-40 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- Left nav -->
+    <ul class="hidden lg:flex gap-6 text-[11px] font-semibold tracking-widest uppercase">
+      <li><a href="#" class="text-chamard font-bold border-b border-chamard pb-0.5">Accueil</a></li>
+      <li class="relative group">
+        <a href="#" class="hover:text-chamard flex items-center gap-1">Lunettes <span class="text-[8px]">▼</span></a>
+      </li>
+      <li class="relative group">
+        <a href="#" class="hover:text-chamard flex items-center gap-1">Lentilles <span class="text-[8px]">▼</span></a>
+      </li>
+      <li><a href="#" class="hover:text-chamard">Verres Zeiss</a></li>
+    </ul>
+
+    <!-- Logo -->
+    <a href="/" class="flex flex-col items-center mx-6">
+      <img
+        src="../photo_site/acceuil.png"
+        alt="Nathalie Chamard Opticiens"
+        class="w-40 md:w-44 h-auto transition-transform duration-500 hover:scale-105"
+        loading="eager"
+      />
+    </a>
+
+    <!-- Right nav -->
+    <ul class="hidden lg:flex gap-6 text-[11px] font-semibold tracking-widest uppercase">
+      <li class="relative group">
+        <a href="#" class="hover:text-chamard flex items-center gap-1">Votre Opticien <span class="text-[8px]">▼</span></a>
+      </li>
+      <li><a href="#" class="hover:text-chamard">Opticien à Domicile</a></li>
+      <li><a href="#" class="hover:text-chamard">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Floating RDV button -->
+<a href="#rdv" class="floating-rdv">Prendre RDV</a>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="bg-cream overflow-hidden relative">
+
+    <!-- Floral decorations (SVG-based flowers) -->
+    <div class="absolute top-0 left-0 w-72 h-72 opacity-80 pointer-events-none z-10" style="top:-20px;left:-20px;">
+      <!-- Large red flower cluster -->
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="80" r="28" fill="#c0392b" opacity="0.9"/>
+        <circle cx="80" cy="80" r="12" fill="#f1c40f"/>
+        <circle cx="130" cy="50" r="18" fill="#e07830" opacity="0.85"/>
+        <circle cx="130" cy="50" r="8" fill="#f1c40f"/>
+        <circle cx="40" cy="130" r="22" fill="#c0392b" opacity="0.8"/>
+        <circle cx="40" cy="130" r="9" fill="#f1c40f"/>
+        <!-- petals for main flower -->
+        <ellipse cx="80" cy="50" rx="10" ry="16" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="80" cy="110" rx="10" ry="16" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="50" cy="80" rx="16" ry="10" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="110" cy="80" rx="16" ry="10" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="58" cy="58" rx="10" ry="14" fill="#c0392b" opacity="0.75" transform="rotate(-45 58 58)"/>
+        <ellipse cx="102" cy="58" rx="10" ry="14" fill="#c0392b" opacity="0.75" transform="rotate(45 102 58)"/>
+        <ellipse cx="58" cy="102" rx="10" ry="14" fill="#c0392b" opacity="0.75" transform="rotate(45 58 102)"/>
+        <ellipse cx="102" cy="102" rx="10" ry="14" fill="#c0392b" opacity="0.75" transform="rotate(-45 102 102)"/>
+        <!-- green leaves -->
+        <ellipse cx="150" cy="100" rx="8" ry="22" fill="#4a7c59" opacity="0.7" transform="rotate(-30 150 100)"/>
+        <ellipse cx="30" cy="160" rx="7" ry="18" fill="#4a7c59" opacity="0.7" transform="rotate(20 30 160)"/>
+        <ellipse cx="60" cy="170" rx="6" ry="16" fill="#4a7c59" opacity="0.6" transform="rotate(-15 60 170)"/>
+        <!-- small yellow flower -->
+        <circle cx="170" cy="60" r="12" fill="#f1c40f" opacity="0.9"/>
+        <circle cx="170" cy="60" r="5" fill="#e07830"/>
+        <ellipse cx="170" cy="45" rx="6" ry="10" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="170" cy="75" rx="6" ry="10" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="155" cy="60" rx="10" ry="6" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="185" cy="60" rx="10" ry="6" fill="#f1c40f" opacity="0.85"/>
+      </svg>
+    </div>
+
+    <!-- Floral right top -->
+    <div class="absolute top-0 right-0 w-64 h-64 opacity-80 pointer-events-none z-10" style="top:-10px;right:-10px;">
+      <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="70" r="24" fill="#c0392b" opacity="0.9"/>
+        <circle cx="200" cy="70" r="10" fill="#f1c40f"/>
+        <ellipse cx="200" cy="44" rx="9" ry="15" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="200" cy="96" rx="9" ry="15" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="174" cy="70" rx="15" ry="9" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="226" cy="70" rx="15" ry="9" fill="#c0392b" opacity="0.85"/>
+        <ellipse cx="182" cy="52" rx="9" ry="13" fill="#c0392b" opacity="0.75" transform="rotate(-45 182 52)"/>
+        <ellipse cx="218" cy="52" rx="9" ry="13" fill="#c0392b" opacity="0.75" transform="rotate(45 218 52)"/>
+        <circle cx="140" cy="40" r="16" fill="#f1c40f" opacity="0.9"/>
+        <circle cx="140" cy="40" r="6" fill="#e07830"/>
+        <ellipse cx="140" cy="22" rx="7" ry="11" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="140" cy="58" rx="7" ry="11" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="122" cy="40" rx="11" ry="7" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="158" cy="40" rx="11" ry="7" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="230" cy="130" rx="7" ry="20" fill="#4a7c59" opacity="0.7" transform="rotate(25 230 130)"/>
+        <ellipse cx="110" cy="60" rx="6" ry="17" fill="#4a7c59" opacity="0.65" transform="rotate(-20 110 60)"/>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center relative z-0">
+      <div class="relative z-20">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">Nathalie Chamard Opticiens</p>
+        <h1 class="font-serif text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight mb-5">
+          Votre opticien à<br />l'Arbresle
+        </h1>
+        <p class="text-gray-600 leading-relaxed mb-8 max-w-md text-sm">
+          Choisir des lunettes n'a jamais été aussi agréable, grâce à notre équipe aussi passionnée que qualifiées.
+        </p>
+        <a href="#rdv" class="inline-block bg-chamard text-white text-xs font-bold uppercase tracking-widest px-8 py-3 hover:bg-chamard/90 transition rounded-sm">
+          Prendre rendez-vous
+        </a>
+      </div>
+
+      <div class="relative z-20">
+        <div id="hero-carousel" class="relative h-[450px] w-full">
+          <img
+            id="hero-slide-0"
+            src="../photo_site/anima1.png"
+            alt="OptiKid"
+            class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover object-top transition-opacity duration-700 ease-in-out opacity-100"
+            loading="eager"
+          />
+          <img
+            id="hero-slide-1"
+            src="../photo_site/anima2.png"
+            alt="Votre opticien à l'Arbresle"
+            class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover object-top transition-opacity duration-700 ease-in-out opacity-0"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel controls -->
+    <div class="flex justify-center gap-3 pb-8 relative z-20">
+      <button id="hero-prev" type="button" class="w-9 h-9 rounded-full border border-gray-400 bg-white flex items-center justify-center hover:bg-gray-50 text-lg leading-none transition-transform duration-200 hover:scale-105" aria-label="Précédent">‹</button>
+      <button id="hero-next" type="button" class="w-9 h-9 rounded-full border border-gray-400 bg-white flex items-center justify-center hover:bg-gray-50 text-lg leading-none transition-transform duration-200 hover:scale-105" aria-label="Suivant">›</button>
+    </div>
+  </section>
+
+  <!-- ===== CATÉGORIES ===== -->
+  <section class="bg-cream pb-16 relative overflow-hidden">
+    <!-- Floral left -->
+    <div class="absolute left-0 top-0 w-48 pointer-events-none z-0 opacity-70">
+      <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="80" r="20" fill="#f1c40f" opacity="0.9"/>
+        <circle cx="30" cy="80" r="8" fill="#e07830"/>
+        <ellipse cx="30" cy="58" rx="8" ry="14" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="30" cy="102" rx="8" ry="14" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="8" cy="80" rx="14" ry="8" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="52" cy="80" rx="14" ry="8" fill="#f1c40f" opacity="0.85"/>
+        <ellipse cx="15" cy="65" rx="8" ry="12" fill="#f1c40f" opacity="0.75" transform="rotate(-45 15 65)"/>
+        <ellipse cx="15" cy="95" rx="8" ry="12" fill="#f1c40f" opacity="0.75" transform="rotate(45 15 95)"/>
+        <circle cx="80" cy="150" r="16" fill="#c0392b" opacity="0.85"/>
+        <circle cx="80" cy="150" r="7" fill="#f1c40f"/>
+        <ellipse cx="80" cy="132" rx="7" ry="12" fill="#c0392b" opacity="0.8"/>
+        <ellipse cx="80" cy="168" rx="7" ry="12" fill="#c0392b" opacity="0.8"/>
+        <ellipse cx="62" cy="150" rx="12" ry="7" fill="#c0392b" opacity="0.8"/>
+        <ellipse cx="98" cy="150" rx="12" ry="7" fill="#c0392b" opacity="0.8"/>
+        <ellipse cx="50" cy="250" rx="7" ry="19" fill="#4a7c59" opacity="0.65" transform="rotate(15 50 250)"/>
+        <ellipse cx="20" cy="180" rx="6" ry="16" fill="#4a7c59" opacity="0.6" transform="rotate(-20 20 180)"/>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+
+      <!-- Lunettes -->
+      <article class="group">
+        <div class="relative overflow-hidden arch-top shadow-md">
+          <img src="../photo_site/lunette.jpeg" alt="Lunettes femme" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        </div>
+        <div class="bg-white -mt-6 mx-3 relative z-10 px-4 py-3 text-center shadow">
+          <h3 class="font-semibold uppercase text-xs tracking-widest">CHANGER DE <br>Lunettes</h3>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="inline-block bg-chamard text-white text-[10px] font-bold uppercase px-5 py-2 hover:bg-chamard/90 rounded-sm">Découvrir</a>
+        </div>
+      </article>
+
+      <!-- Lentilles -->
+      <article class="group">
+        <div class="relative overflow-hidden arch-top shadow-md">
+          <img src="../photo_site/lentille.jpeg" alt="Lentilles" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        </div>
+        <div class="bg-white -mt-6 mx-3 relative z-10 px-4 py-3 text-center shadow">
+          <h3 class="font-semibold uppercase text-xs tracking-widest">NOS SOLUTIONS <br>Lentilles</h3>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="inline-block bg-chamard text-white text-[10px] font-bold uppercase px-5 py-2 hover:bg-chamard/90 rounded-sm">Découvrir</a>
+        </div>
+      </article>
+
+      <!-- Zeiss -->
+      <article class="group">
+        <div class="relative overflow-hidden arch-top shadow-md">
+          <img src="../photo_site/zeiss.jpeg" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        </div>
+        <div class="bg-white -mt-6 mx-3 relative z-10 px-4 py-3 text-center shadow">
+          <h3 class="font-semibold uppercase text-xs tracking-widest">LES VERRES <br>Zeiss</h3>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="inline-block bg-chamard text-white text-[10px] font-bold uppercase px-5 py-2 hover:bg-chamard/90 rounded-sm">Découvrir</a>
+        </div>
+      </article>
+
+      <!-- Domicile -->
+      <article class="group">
+        <div class="relative overflow-hidden arch-top shadow-md">
+          <img src="../photo_site/domicile.jpeg" alt="Domicile" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        </div>
+        <div class="bg-white -mt-6 mx-3 relative z-10 px-4 py-3 text-center shadow">
+          <h3 class="font-semibold uppercase text-xs tracking-widest">RDV à <br>Domicile</h3>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="inline-block bg-chamard text-white text-[10px] font-bold uppercase px-5 py-2 hover:bg-chamard/90 rounded-sm">Découvrir</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== INTRO TEXT ===== -->
+  <section class="bg-white py-14">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-sm font-bold uppercase tracking-widest text-gray-800 mb-1">
+        Chamard Opticiens
+      </h2>
+      <h3 class="text-sm font-bold uppercase tracking-widest text-gray-800 mb-8">
+        Votre opticien à l'Arbresle
+      </h3>
+      <p class="text-gray-600 leading-relaxed mb-3 text-sm">
+        Depuis 1950, Chamard Opticiens met son savoir-faire au service de votre vision. Installée en plein cœur de L'Arbresle, notre entreprise familiale est bien plus qu'un simple opticien.
+      </p>
+      <p class="text-chamard font-semibold text-sm mb-1">Vous y êtes accueillis par une équipe aussi passionnée que qualifiées.</p>
+      <p class="text-chamard font-semibold text-sm mb-1">Entièrement à votre écoute, nous vous conseillons dans une ambiance conviviale et colorée.</p>
+      <p class="text-chamard font-semibold text-sm">Vous choisissez vos nouvelles lunettes ou lentilles dans la bonne humeur !</p>
+    </div>
+  </section>
+
+  <!-- ===== EXPERTISE ===== -->
+  <section class="bg-cream py-14">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Image arrondie en haut -->
+      <div class="overflow-hidden arch-top shadow-xl">
+        <img
+          src="../photo_site/photo en bas .png"
+          alt="Intérieur boutique"
+          class="w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+          style="height:420px;"
+          loading="lazy"
+        />
+      </div>
+
+      <div>
+        <div class="flex gap-3 items-start mb-5">
+          <span class="w-1 self-stretch bg-orange shrink-0" style="min-height:60px;"></span>
+          <h2 class="font-serif text-3xl lg:text-4xl text-gray-900 leading-snug">
+            Une expertise complète de l'optique
+          </h2>
+        </div>
+        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+          Pour garantir votre satisfaction, nous mettons à votre disposition un savoir-faire global de l'optique.
+        </p>
+        <ul class="space-y-2 text-gray-600 text-sm mb-6 list-none">
+          <li class="flex gap-2 items-start">
+            <span class="text-chamard font-bold mt-0.5">•</span>
+            <span>Une <strong>équipe qualifiée et diplômée</strong>, spécialisée en santé visuelle et contactologie.</span>
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-chamard font-bold mt-0.5">•</span>
+            <span>Une prise de rendez-vous possible <span class="text-chamard underline cursor-pointer">via la plateforme Doctolib</span> : simple et rapide !</span>
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-chamard font-bold mt-0.5">•</span>
+            <span><strong>Des contrôles de vue réalisés sur place.</strong> Un gain de temps et une précision optimale.</span>
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-chamard font-bold mt-0.5">•</span>
+            <span>Un atelier intégré pour le montage des verres, sans sous-traitance, qui garantit les meilleurs résultats et garantie une parfaite qualité de pose.</span>
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-chamard font-bold mt-0.5">•</span>
+            <span><strong>Un service d'opticien à domicile</strong>, disponible dans les nombreux villages environnant L'Arbresle : Bully, Chevinay, Épeaux, Fleurieux-sur-Arbresle, Lentilly, Saint-Germain-Nuelles, Saint-Pierre la Palud, Savigny, Sourcieux les Mines (69210), Aix, Belmont-d'Azergues, Charnay, Chasselay, Châtillon, Chazay-d'Azergues, Chessy, Civrieux-d'Azergues, Dommartin, Les Chères, Liézès, Lozanne, Marcy-d'Azergues, Saint-Jean-des-Vignes (69380), Bessenay, Bibost, Brullioles, Brussieu, Courzieu, Saint-Julien sur Bibost (69690).</span>
+          </li>
+        </ul>
+        <a href="#" class="block w-full text-center bg-chamard text-white text-[11px] font-bold uppercase tracking-widest py-3 hover:bg-chamard/90 rounded-sm">
+          Découvrir notre boutique en visite virtuelle
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STYLES & BRANDING ===== -->
+  <section class="relative overflow-hidden">
+    <div class="grid lg:grid-cols-2">
+      <!-- Text orange side -->
+      <div class="bg-orange text-white p-10 lg:p-16 flex flex-col justify-center relative">
+        <!-- Floral deco -->
+        <div class="absolute top-4 right-4 opacity-40 pointer-events-none">
+          <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="14" fill="white"/>
+            <circle cx="40" cy="40" r="6" fill="#f1c40f"/>
+            <ellipse cx="40" cy="22" rx="6" ry="12" fill="white"/>
+            <ellipse cx="40" cy="58" rx="6" ry="12" fill="white"/>
+            <ellipse cx="22" cy="40" rx="12" ry="6" fill="white"/>
+            <ellipse cx="58" cy="40" rx="12" ry="6" fill="white"/>
+          </svg>
+        </div>
+
+        <h2 class="font-serif text-3xl lg:text-4xl mb-5 leading-snug">
+          Des lunettes pour tous les styles, toutes les envies
+        </h2>
+        <p class="text-white/90 leading-relaxed mb-3 text-sm">
+          Vous trouverez, chez <span class="underline font-semibold">Chamard Opticiens</span>, un large gamme de montures pour femme, homme et enfant, adaptées tous les morphologies, styles et budgets. Vous cherchez des lunettes élégantes, discrètes ou audacieuses ? Nous avons ce qu'il vous faut !
+        </p>
+        <p class="text-white/90 leading-relaxed mb-3 text-sm">
+          <strong>Optitail</strong> : l'expertise visuelle des enfants et adolescents. Gamille Clanton, Chamard Opticiens vous offre un choix varié de montures spécialement conçues pour les besoins des plus jeunes : des lunettes robustes, confortables et esthétiques, qui accompagnent leur quotidien en toute sérénité.
+        </p>
+        <p class="text-white/90 leading-relaxed mb-6 text-sm">
+          <strong>Lentilles de contact</strong><br />
+          Une large gamme de lentilles et de produits d'entretien, avec un suivi en magasin. Diplômés en contactologie, nos opticiens répondent à toutes vos questions et vous guideront vers les solutions les plus adaptées.
+        </p>
+        <a href="#" class="inline-block self-start bg-chamard text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 hover:bg-chamard/90 rounded-sm">
+          Contactez votre expert de l'optique à l'arbresle ici
+        </a>
+      </div>
+
+      <!-- Image side -->
+      <div>
+        <img
+          src="../photo_site/lunette en bas.jpeg"
+          alt="Chamard Opticiens"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+          style="min-height: 500px;"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Brand watermark -->
+    <div class="absolute bottom-4 right-8 text-white/30 text-2xl font-bold italic pointer-events-none">vonBo</div>
+
+    <!-- Bottom floral deco -->
+    <div class="absolute bottom-0 left-0 w-48 pointer-events-none opacity-60">
+      <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="100" r="18" fill="#c0392b" opacity="0.8"/>
+        <circle cx="40" cy="100" r="7" fill="#f1c40f"/>
+        <ellipse cx="40" cy="80" rx="7" ry="12" fill="#c0392b" opacity="0.75"/>
+        <ellipse cx="40" cy="120" rx="7" ry="12" fill="#c0392b" opacity="0.75"/>
+        <ellipse cx="20" cy="100" rx="12" ry="7" fill="#c0392b" opacity="0.75"/>
+        <ellipse cx="60" cy="100" rx="12" ry="7" fill="#c0392b" opacity="0.75"/>
+        <circle cx="100" cy="120" r="14" fill="#f1c40f" opacity="0.85"/>
+        <circle cx="100" cy="120" r="6" fill="#e07830"/>
+        <ellipse cx="70" cy="110" rx="6" ry="16" fill="#4a7c59" opacity="0.65" transform="rotate(-20 70 110)"/>
+        <ellipse cx="140" cy="130" rx="6" ry="14" fill="#4a7c59" opacity="0.6" transform="rotate(15 140 130)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== AVIS GOOGLE ===== -->
+  <section class="bg-cream pt-16 pb-4 text-center">
+    <div class="flex flex-col items-center gap-1 mb-10">
+      <img
+        src="../photo_site/google.png"
+        alt="Avis Google"
+        class="w-full max-w-xs rounded-lg shadow-sm"
+        loading="eager"
+      />
+    </div>
+
+    <h2 class="text-sm font-bold uppercase tracking-widest text-gray-800 mb-1">Notre actualité</h2>
+    <p class="text-gray-500 text-sm mb-6">Contenu à venir</p>
+
+    <!-- Empty actulaité placeholder area -->
+    <div class="max-w-7xl mx-auto px-4 mb-8">
+      <div class="bg-white rounded shadow-sm" style="height: 120px;"></div>
+    </div>
+  </section>
+
+  <!-- ===== BARRE MARQUES ===== -->
+  <section class="bg-chamard py-8">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-10 lg:gap-14">
+      <img
+        src="../photo_site/marque1.png"
+        alt="1"
+        class="h-7 w-auto opacity-95 transition-all duration-300 hover:opacity-100 hover:scale-105"
+        loading="lazy"
+      />
+      <img
+        src="../photo_site/marque2.png"
+        alt="2"
+        class="h-8 w-auto opacity-95 transition-all duration-300 hover:opacity-100 hover:scale-105"
+        loading="lazy"
+      />
+      <img
+        src="../photo_site/marque3.png"
+        alt="3"
+        class="h-7 w-auto opacity-95 transition-all duration-300 hover:opacity-100 hover:scale-105"
+        loading="lazy"
+      />
+      <img
+        src="../photo_site/marque4.png"
+        alt="4"
+        class="h-6 w-auto opacity-95 transition-all duration-300 hover:opacity-100 hover:scale-105"
+        loading="lazy"
+      />
+      <img
+        src="../photo_site/marque5.png"
+        alt="5"
+        class="h-8 w-auto opacity-95 transition-all duration-300 hover:opacity-100 hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-cream pt-10 pb-0 relative">
+
+  <!-- Horaires card -->
+  <div class="max-w-5xl mx-auto px-4 mb-8">
+    <div class="bg-white shadow-md rounded p-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold uppercase tracking-widest text-sm text-center mb-4">Horaires</h3>
+          <table class="w-full text-sm text-gray-600">
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="py-1.5">Lundi</td><td class="py-1.5 text-right">Fermé</td></tr>
+              <tr><td class="py-1.5">Mardi</td><td class="py-1.5 text-right">9h00-12h15 // 14h30-19h00</td></tr>
+              <tr><td class="py-1.5">Mercredi</td><td class="py-1.5 text-right">9h00-12h15 // 14h30-19h00</td></tr>
+              <tr><td class="py-1.5">Jeudi</td><td class="py-1.5 text-right">9h00-12h15 // 14h30-19h00</td></tr>
+              <tr><td class="py-1.5">Vendredi</td><td class="py-1.5 text-right">9h00-12h15 // 14h30-19h00</td></tr>
+              <tr><td class="py-1.5">Samedi</td><td class="py-1.5 text-right">9h00-12h15 // 14h15-17h00</td></tr>
+              <tr><td class="py-1.5">Dimanche</td><td class="py-1.5 text-right">Fermé</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex items-center">
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Possibilité de rendez-vous au 22 Rue Charles de Gaulle, à L'Arbresle, le lundi ainsi que de 12h et 14h chaque jour. Réservation par téléphone.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer columns -->
+  <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-10">
+    <!-- Info -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+              <a href="/" class="flex flex-col items-center mx-6">
+      <img
+        src="../photo_site/acceuil.png"
+        alt="Nathalie Chamard Opticiens"
+        class="w-24 md:w-28 h-auto transition-transform duration-500 hover:scale-105"
+        loading="eager"
+      />
+    </a>
+          
+        
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wide">Information</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-600 leading-relaxed">
+        Nathalie Chamard et son équipe vous accueillent dans leur magasin d'optique situé à L'Arbresle. Diplômés et expérimentés, ils sauront vous présenter un large choix de montures pour toute la famille, pour tous les styles et tous les budgets. Sur-devis.
+      </p>
+      <p class="text-xs text-gray-500 mt-2">04(0)-378 2140(0) – 9h30 – 19h30</p>
+    </div>
+
+    <!-- Navigation -->
+    <div>
+      <h4 class="font-bold uppercase text-xs tracking-widest mb-4">Navigation</h4>
+      <ul class="space-y-2 text-xs text-gray-600">
+        <li><a href="#" class="hover:text-chamard uppercase tracking-wide">» Accueil</a></li>
+        <li><a href="#" class="hover:text-chamard uppercase tracking-wide">» Lunettes</a></li>
+        <li><a href="#" class="hover:text-chamard uppercase tracking-wide">» Lentilles</a></li>
+        <li><a href="#" class="hover:text-chamard uppercase tracking-wide">» Verres Zeiss</a></li>
+      </ul>
+    </div>
+
+    <!-- Nous suivre -->
+    <div>
+      <h4 class="font-bold uppercase text-xs tracking-widest mb-4">Nous Suivre</h4>
+      <div class="flex gap-3 justify-center-safe" >
+      <a href="#" class="w-4 h-4 rounded-sm items-center text-center justify-center bg-blue-600 text-white font-bold text-lg hover:bg-blue-500 hover:scale-110 hover shadow-lg hover:shadow-blue-500/50 transition duration-300">f</a>
+      <a href="#" class="hover:opacity-80 text-xs" aria-label="Instagram">
+        <img src="../photo_site/instagram.png" alt="Instagram" class="w-4 h-4 rounded-sm" />
+      </a>
+    </div>
+      <div class="mt-4">
+        <h4 class="font-bold uppercase text-xs tracking-widest mb-2">Votre Opticien</h4>
+        <ul class="space-y-1 text-xs text-gray-600">
+          <li><a href="#" class="hover:text-chamard uppercase tracking-wide">» Notre Opticien</a></li>
+          <li><a href="#" class="hover:text-chamard uppercase tracking-wide">» Opticien à Domicile</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bg-darkbrown text-white/80 text-xs text-center py-3 px-4">
+    © Chamard Opticiens 2026 | Mentions légales | Plan du site | Gestion des cookies | Mise à jour le 04/02/2025
+    <span class="ml-4">Réalisé par Cognix Systems sur WeAskMe ®</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const hero = document.getElementById('hero-carousel');
+    const slides = ['hero-slide-0', 'hero-slide-1']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (slides.length < 2) return;
+
+    let idx = 0;
+
+    const render = () => {
+      slides.forEach((img, i) => {
+        img.classList.toggle('opacity-100', i === idx);
+        img.classList.toggle('opacity-0', i !== idx);
+      });
+    };
+
+    const step = (delta) => {
+      idx = (idx + delta + slides.length) % slides.length;
+      render();
+    };
+
+    document.getElementById('hero-prev')?.addEventListener('click', () => step(-1));
+    document.getElementById('hero-next')?.addEventListener('click', () => step(1));
+
+    let timer = window.setInterval(() => step(1), 6500);
+
+    hero?.addEventListener('mouseenter', () => window.clearInterval(timer));
+    hero?.addEventListener('mouseleave', () => {
+      timer = window.setInterval(() => step(1), 6500);
+    });
+  })();
+</script>
+
+</body>
+</html>
